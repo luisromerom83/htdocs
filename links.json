@@ -3,14 +3,14 @@
     "title": "Flexget",
     "href": "http://192.168.68.5050",
     "description": "Flexget automation",
-      "img":""
+      "img":"https://flexget.com/attachments/LogoContest/PastedGraphic-3.png"
 
   },
   {
     "title": "Plex",
     "href": "http://192.168.68.117:32400/web",
     "description": "Netflix casero",
-      "img":""
+      "img":"https://e1.pngegg.com/pngimages/261/453/png-clipart-macos-app-icons-plex-media-server.png"
 
   }
 ]
