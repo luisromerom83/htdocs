@@ -7,9 +7,9 @@
 
   },
   {
-    "title": "Link 2",
-    "href": "https://www.example.com/link2",
-    "description": "This is the description for link 2",
+    "title": "Plex",
+    "href": "http://192.168.68.117:32400/web",
+    "description": "Netflix casero",
       "img":""
 
   }
