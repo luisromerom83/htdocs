@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Links</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="links.json"></script>
+  <style>
+    .card {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <!-- repeatable section for each item in the JSON file -->
+        <div id="links1"></div>
+      </div>
+      <div class="col-md-6">
+        <!-- repeatable section for each item in the JSON file -->
+        <div id="links2"></div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    $(function() {
+      $.getJSON("links.json", function(data) {
+        var itemsPerColumn = Math.ceil(data.length / 2);
+        var col1 = "";
+        var col2 = "";
+        for (var i = 0; i < data.length; i++) {
+          var card = '<div class="card">' +
+            ' <div class="card-header">'+
+            ' <img width="80" height="80" src="'+data[i].img+'" alt="Logo for Link 1" class="logo">'+
+           // '<h5 class="card-title">Link 1</h5>'+
+            '</div>'+
+            '<div class="card-body">' +
+            '<a target="_blank" href="' + data[i].href + '" class="card-link">' +
+            '<h5 class="card-title">' + data[i].title + '</h5>' +
+            '<p class="card-text">' + data[i].description + '</p>' +
+            '</a>' +
+            '</div>' +
+            '</div>';
+          if (i < itemsPerColumn) {
+            col1 += card;
+          } else {
+            col2 += card;
+          }
+        }
+        $("#links1").html(col1);
+        $("#links2").html(col2);
+      });
+    });
+  </script>
+</body>
+</html>
